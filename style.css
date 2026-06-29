@@ -2,6 +2,13 @@ body {
     background-color:#121212;
     color:white;
     text-align: center;
+    margin: 0;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
 }
 
 #head1 {
@@ -11,8 +18,8 @@ body {
     font-family: "Roboto Mono", monospace;
     font-optical-sizing: auto;
     font-style: normal;
+    margin-top: 60px; 
 }
-
 
 #startBtn{
     padding: 12px 24px;
@@ -43,6 +50,13 @@ body {
 }
 
 .btn-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.line-one, .line-two {
     display: flex;
     justify-content: center;
 }
@@ -105,4 +119,32 @@ body {
 
     background-color: rgba(255,255,255,0.1);
     backdrop-filter: blur(5px);
+}
+
+@media (max-width: 600px) {
+    #head1 {
+        font-size: 1.75rem;
+        margin-top: 70px; 
+    }
+
+    #highScore {
+        position: absolute;
+        top: 15px;
+        right: 50%;
+        transform: translateX(50%); 
+        font-size: 1rem;
+        padding: 6px 12px;
+        width: max-content;
+    }
+
+    .btn {
+        height: 120px;
+        width: 120px;
+        border-width: 6px; 
+        margin: 1rem;      
+    }
+    
+    .btn:hover, #startBtn:hover {
+        transform: none;
+    }
 }
